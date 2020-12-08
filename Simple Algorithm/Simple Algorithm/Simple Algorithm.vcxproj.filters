@@ -18,5 +18,8 @@
     <ClCompile Include="Evclid_Alghoritm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Arifmetic and Geometric progression.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
