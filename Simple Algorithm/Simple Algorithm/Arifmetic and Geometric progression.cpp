@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+void Arifmetic() {
 	//Arifmetic
 	int x = 1;
 	int stop = 10;
@@ -20,8 +19,8 @@ int main()
 		x += step;
 	}
 	std::cout << '\n';
-
-	// Geometric
+}
+void Geometric() {// Geometric
 	int x = 1;
 	int stop = 10;
 	int step = 2;
@@ -39,5 +38,4 @@ int main()
 		x *= step;
 	}
 	std::cout << '\n';
-
 }
