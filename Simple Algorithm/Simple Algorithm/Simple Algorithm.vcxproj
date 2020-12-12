@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="2-ch system.cpp" />
     <ClCompile Include="Arifmetic and Geometric progression.cpp" />
     <ClCompile Include="Evclid_Alghoritm.cpp" />
     <ClCompile Include="Filtrachiy Potocka.cpp" />
