@@ -47,7 +47,21 @@ void translation_n(int number, int sys) {
 	}
 }
 
-int main()
+void operationbinary()
 {
-	translation_n(111, 2);
+	// & - and
+	// | - or
+	// ~ - not
+	// >> - trans right
+	// << - trans left
+	// ^ - xor
+
+	// When x != y and != 0 swap
+	int  x = 5;
+	int y = 2;
+	x = x ^ y;
+	y = x ^ y;
+	x = x ^ y;
+
+	//Logic && - and || - or ! - not
 }
