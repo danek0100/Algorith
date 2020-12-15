@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="2-ch system.cpp" />
     <ClCompile Include="Arifmetic and Geometric progression.cpp" />
+    <ClCompile Include="double_number.cpp" />
     <ClCompile Include="Evclid_Alghoritm.cpp" />
     <ClCompile Include="Filtrachiy Potocka.cpp" />
     <ClCompile Include="Onesstep Algorithm.cpp" />
+    <ClCompile Include="Prime and parth.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
