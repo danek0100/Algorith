@@ -144,6 +144,7 @@
     <ClCompile Include="double_number.cpp" />
     <ClCompile Include="Evclid_Alghoritm.cpp" />
     <ClCompile Include="Filtrachiy Potocka.cpp" />
+    <ClCompile Include="Masses and function.cpp" />
     <ClCompile Include="Onesstep Algorithm.cpp" />
     <ClCompile Include="Prime and parth.cpp" />
   </ItemGroup>
