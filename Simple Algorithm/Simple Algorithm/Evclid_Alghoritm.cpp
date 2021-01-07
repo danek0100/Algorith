@@ -5,7 +5,17 @@ int euclid_gcd(int a, int b)
 	while (a != b)
 	{
 		if (a > b) a -= b;
-		else b -= a;
-		return a;
+		else b -= a;		
 	}
+	return a;
 }
+
+//int main() {
+//	int x;
+//	int y;
+//	int res;
+//	std::cin >> x;
+//	std::cin >> y;
+//	res = euclid_gcd(x, y);
+//	std::cout << res;
+//}
