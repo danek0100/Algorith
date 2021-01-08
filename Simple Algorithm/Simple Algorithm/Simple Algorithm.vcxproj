@@ -148,6 +148,7 @@
     <ClCompile Include="Mass and sort.cpp" />
     <ClCompile Include="Masses and function.cpp" />
     <ClCompile Include="Onesstep Algorithm.cpp" />
+    <ClCompile Include="pointers.cpp" />
     <ClCompile Include="Prime and parth.cpp" />
   </ItemGroup>
   <ItemGroup>
