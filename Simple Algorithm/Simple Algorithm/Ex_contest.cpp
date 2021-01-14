@@ -2,9 +2,46 @@
 //#include <cmath>
 #include <vector>
 #include <algorithm>
+#include <cstring>
 using namespace std;
 
 
+//Задача про гаишника
+//int main()
+//{
+//	typedef struct car {
+//		int speed;
+//		char number[7];
+//	}CAR;
+//
+//	CAR now_car;
+//	std::cin >> now_car.speed;
+//	std::cin >> now_car.number;
+//	now_car.number[6] = '\0';
+//	int pain = 0;
+//	while (strcmp(now_car.number, "A999AA")) {
+//		if (now_car.speed > 60) {
+//			int sov = 1;
+//			for (int i = 1; i < 3; i++) {
+//				for (int j = i + 1; j < 4; j++) {
+//					if (now_car.number[i] == now_car.number[j])
+//						sov++;
+//				}
+//			}
+//			/*if (now_car.number[1] == now_car.number[2] && now_car.number[2] && now_car.number[3]) pain += 1000;
+//			else if (now_car.number[1] == now_car.number[2] || now_car.number[1] == now_car.number[3] || now_car.number[2] == now_car.number[3]) pain += 500;
+//			else pain += 100;*/
+//			if (sov > 2) pain += 1000;
+//			else if (sov == 2) pain += 500;
+//			else pain += 100;
+//		}
+//		std::cin >> now_car.speed;
+//		std::cin >> now_car.number;
+//		now_car.number[6] = '\0';
+//	}
+//	std::cout << pain;
+//    return 0;
+//}
 
 ////Факторизация числа
 //int main()
