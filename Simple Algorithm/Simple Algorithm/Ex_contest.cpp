@@ -1,11 +1,112 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-//#include <cmath>
 #include <vector>
 #include <algorithm>
 #include <cstring>
 #include <cmath>
+#include <ctime>
+#include <cstring>
+#include <cstdlib>
+
 using namespace std;
 
+// Перед экзаменом Петя решил хорошенько выспаться.После криков "Халява, приди!" наш студент лег в кровать и начал заводить будильник.Посчитайте сколько секунд осталось спать до звонка.
+class DateTime
+{
+	friend int getDifference(DateTime& tim, DateTime& tim_2);
+private:
+	struct tm str_time;
+	int second;
+public:
+	DateTime(int, int, int);   // конструктор с параметром числового типа
+	DateTime();
+	DateTime(const DateTime&);
+};
+
+DateTime::DateTime(int hour, int minute, int second)
+{
+	time_t rawtime = 0;
+
+	rawtime += second + (minute * 60) + (hour * 3600);
+	this->second = second + (minute * 60) + (hour * 3600);
+	str_time = *gmtime(&rawtime);
+}
+
+DateTime::DateTime()
+{
+	time_t rawtime;
+	time(&rawtime);
+	struct tm* kopy;
+	kopy = &str_time;
+	kopy = localtime(&rawtime);
+	str_time = *kopy;
+}
+
+DateTime::DateTime(const DateTime& s)
+{
+	str_time = s.str_time;
+}
+
+int getDifference(DateTime& tim, DateTime& tim_2)
+{
+	time_t time_y = mktime(&tim_2.str_time);
+	time_t time_y2 = mktime(&tim.str_time);
+	time_t diff = 0;
+	int dif = 0;
+	if (tim.second >= tim_2.second)
+	{
+		dif = tim.second - tim_2.second;
+		return dif;
+	}
+	else
+	{
+		dif = tim_2.second - tim.second;
+		return dif;
+	}
+
+
+
+	if (time_y >= time_y2)
+	{
+		diff = time_y - time_y2;
+		return diff;
+	}
+	else
+	{
+		diff = time_y2 - time_y;
+		return diff;
+	}
+
+}
+
+int main() {
+	int hour_s = 0;
+	int minute_s = 0;
+	int second_s = 0;
+
+	int hour_e = 0;
+	int minute_e = 0;
+	int second_e = 0;
+
+	scanf("%d:%d:%d", &hour_s, &minute_s, &second_s);
+	scanf("%d:%d:%d", &hour_e, &minute_e, &second_e);
+
+	int second_1 = second_s + (minute_s * 59) + (hour_s * 3599);
+	int second_2 = second_e + (minute_e * 59) + (hour_e * 3599);
+	int dif = 0;
+	if (second_1 >= second_2)
+	{
+		dif = second_1 - second_2;
+	}
+	else
+	{
+		dif = second_2 - second_1;
+	}
+	cout << dif;
+	return 0;
+
+
+}
 //Вавилоская система счисления
 // Где-то ошибка... Мб в понимании задачи?
 /*В вавилонской системе счисления для записи чисел внутри 60-ричного разряда использовались всего два знака:

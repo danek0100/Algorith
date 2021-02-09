@@ -1,5 +1,4 @@
 ﻿  Ex_contest.cpp
-C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Simple Algorithm\Ex_contest.cpp(21,14): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Simple Algorithm\Ex_contest.cpp(39,11): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Simple Algorithm\Ex_contest.cpp(44,9): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Simple Algorithm\Ex_contest.cpp(72,10): warning C4244: return: преобразование "time_t" в "int", возможна потеря данных
+C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Simple Algorithm\Ex_contest.cpp(77,10): warning C4244: return: преобразование "time_t" в "int", возможна потеря данных
   Simple Algorithm.vcxproj -> C:\Users\sobda\Documents\GitHub\Algorithm\Simple Algorithm\Debug\Simple Algorithm.exe
