@@ -91,12 +91,13 @@ int main() {
 	scanf("%d:%d:%d", &hour_s, &minute_s, &second_s);
 	scanf("%d:%d:%d", &hour_e, &minute_e, &second_e);
 
-	int second_1 = second_s + (minute_s * 59) + (hour_s * 3599);
-	int second_2 = second_e + (minute_e * 59) + (hour_e * 3599);
+	int second_1 = second_s + (minute_s * 60) + (hour_s * 3600);
+	int second_2 = second_e + (minute_e * 60) + (hour_e * 3600);
 	int dif = 0;
 	if (second_1 >= second_2)
 	{
-		dif = second_1 - second_2;
+		dif = (24 * 3600) - second_1;
+		dif += second_2;
 	}
 	else
 	{
@@ -105,8 +106,8 @@ int main() {
 	cout << dif;
 	return 0;
 
-
 }
+
 //Вавилоская система счисления
 // Где-то ошибка... Мб в понимании задачи?
 /*В вавилонской системе счисления для записи чисел внутри 60-ричного разряда использовались всего два знака:
