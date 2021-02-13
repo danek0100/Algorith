@@ -147,6 +147,7 @@
     <ClCompile Include="Ex_contest.cpp" />
     <ClCompile Include="Filtrachiy Potocka.cpp" />
     <ClCompile Include="lect_8.cpp" />
+    <ClCompile Include="lect_9.cpp" />
     <ClCompile Include="Mass and sort.cpp" />
     <ClCompile Include="Masses and function.cpp" />
     <ClCompile Include="Onesstep Algorithm.cpp" />
