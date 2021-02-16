@@ -10,103 +10,160 @@
 
 using namespace std;
 
-// ѕеред экзаменом ѕет€ решил хорошенько выспатьс€.ѕосле криков "’ал€ва, приди!" наш студент лег в кровать и начал заводить будильник.ѕосчитайте сколько секунд осталось спать до звонка.
-class DateTime
-{
-	friend int getDifference(DateTime& tim, DateTime& tim_2);
-private:
-	struct tm str_time;
-	int second;
-public:
-	DateTime(int, int, int);   // конструктор с параметром числового типа
-	DateTime();
-	DateTime(const DateTime&);
-};
-
-DateTime::DateTime(int hour, int minute, int second)
-{
-	time_t rawtime = 0;
-
-	rawtime += second + (minute * 60) + (hour * 3600);
-	this->second = second + (minute * 60) + (hour * 3600);
-	str_time = *gmtime(&rawtime);
-}
-
-DateTime::DateTime()
-{
-	time_t rawtime;
-	time(&rawtime);
-	struct tm* kopy;
-	kopy = &str_time;
-	kopy = localtime(&rawtime);
-	str_time = *kopy;
-}
-
-DateTime::DateTime(const DateTime& s)
-{
-	str_time = s.str_time;
-}
-
-int getDifference(DateTime& tim, DateTime& tim_2)
-{
-	time_t time_y = mktime(&tim_2.str_time);
-	time_t time_y2 = mktime(&tim.str_time);
-	time_t diff = 0;
-	int dif = 0;
-	if (tim.second >= tim_2.second)
-	{
-		dif = tim.second - tim_2.second;
-		return dif;
-	}
-	else
-	{
-		dif = tim_2.second - tim.second;
-		return dif;
-	}
-
-
-
-	if (time_y >= time_y2)
-	{
-		diff = time_y - time_y2;
-		return diff;
-	}
-	else
-	{
-		diff = time_y2 - time_y;
-		return diff;
-	}
-
-}
+//ƒан список точек плоскости с целочисленными координатами.
+//Ќеобходимо определить номер координатной четверти K, в которой находитс€ больше всего точек.
+//“очки, хот€ бы одна из координат которых равна нулю, считаютс€ не принадлежащими ни одной четверти и не рассматриваютс€.
+//≈сли одновременно в нескольких четверт€х одинаковое и при этом максимальное количество точек, то вывести только первую по номеру.
+//«амечание: в данной задаче можно обойтись без использовани€ массива Ч использовать отдельные четыре счЄтчика.
+//
+//
 
 int main() {
-	int hour_s = 0;
-	int minute_s = 0;
-	int second_s = 0;
+	int N;
+	int x;
+	int y;
 
-	int hour_e = 0;
-	int minute_e = 0;
-	int second_e = 0;
+	int n1 = 0;
+	int n2 = 0;
+	int n3 = 0;
+	int n4 = 0;
 
-	scanf("%d:%d:%d", &hour_s, &minute_s, &second_s);
-	scanf("%d:%d:%d", &hour_e, &minute_e, &second_e);
-
-	int second_1 = second_s + (minute_s * 60) + (hour_s * 3600);
-	int second_2 = second_e + (minute_e * 60) + (hour_e * 3600);
-	int dif = 0;
-	if (second_1 >= second_2)
-	{
-		dif = (24 * 3600) - second_1;
-		dif += second_2;
+	cin >> N;
+	int n = 0;
+	while (n < N) {
+		cin >> x;
+		cin >> y;
+		if (x == 0 || y == 0) {
+			n++;
+			continue;
+		}
+		if (x > 0) {
+			if (y > 0)
+				n1++;
+			else
+				n4++
+		}
+		else {
+			if (y > 0)
+				n2++;
+			else
+				n3++;
+		}
+		n++;
 	}
-	else
-	{
-		dif = second_2 - second_1;
+
+	std::vector<int> name = { n1 , n2, n3, n4 };
+	for (int i = 1; i < 4; i++) {
+		int max = n1;
+		int index = 1;
+		if (name[i] > max) {
+			max = name[i];
+			index = i + 1;
 	}
-	cout << dif;
+	cout << index << ' ' << max;
+
 	return 0;
-
 }
+
+
+
+// ѕеред экзаменом ѕет€ решил хорошенько выспатьс€.ѕосле криков "’ал€ва, приди!" наш студент лег в кровать и начал заводить будильник.ѕосчитайте сколько секунд осталось спать до звонка.
+//class DateTime
+//{
+//	friend int getDifference(DateTime& tim, DateTime& tim_2);
+//private:
+//	struct tm str_time;
+//	int second;
+//public:
+//	DateTime(int, int, int);   // конструктор с параметром числового типа
+//	DateTime();
+//	DateTime(const DateTime&);
+//};
+//
+//DateTime::DateTime(int hour, int minute, int second)
+//{
+//	time_t rawtime = 0;
+//
+//	rawtime += second + (minute * 60) + (hour * 3600);
+//	this->second = second + (minute * 60) + (hour * 3600);
+//	str_time = *gmtime(&rawtime);
+//}
+//
+//DateTime::DateTime()
+//{
+//	time_t rawtime;
+//	time(&rawtime);
+//	struct tm* kopy;
+//	kopy = &str_time;
+//	kopy = localtime(&rawtime);
+//	str_time = *kopy;
+//}
+//
+//DateTime::DateTime(const DateTime& s)
+//{
+//	str_time = s.str_time;
+//}
+//
+//int getDifference(DateTime& tim, DateTime& tim_2)
+//{
+//	time_t time_y = mktime(&tim_2.str_time);
+//	time_t time_y2 = mktime(&tim.str_time);
+//	time_t diff = 0;
+//	int dif = 0;
+//	if (tim.second >= tim_2.second)
+//	{
+//		dif = tim.second - tim_2.second;
+//		return dif;
+//	}
+//	else
+//	{
+//		dif = tim_2.second - tim.second;
+//		return dif;
+//	}
+//
+//
+//
+//	if (time_y >= time_y2)
+//	{
+//		diff = time_y - time_y2;
+//		return diff;
+//	}
+//	else
+//	{
+//		diff = time_y2 - time_y;
+//		return diff;
+//	}
+//
+//}
+//
+//int main() {
+//	int hour_s = 0;
+//	int minute_s = 0;
+//	int second_s = 0;
+//
+//	int hour_e = 0;
+//	int minute_e = 0;
+//	int second_e = 0;
+//
+//	scanf("%d:%d:%d", &hour_s, &minute_s, &second_s);
+//	scanf("%d:%d:%d", &hour_e, &minute_e, &second_e);
+//
+//	int second_1 = second_s + (minute_s * 60) + (hour_s * 3600);
+//	int second_2 = second_e + (minute_e * 60) + (hour_e * 3600);
+//	int dif = 0;
+//	if (second_1 >= second_2)
+//	{
+//		dif = (24 * 3600) - second_1;
+//		dif += second_2;
+//	}
+//	else
+//	{
+//		dif = second_2 - second_1;
+//	}
+//	cout << dif;
+//	return 0;
+//
+//}
 
 //¬авилоска€ система счислени€
 // √де-то ошибка... ћб в понимании задачи?
