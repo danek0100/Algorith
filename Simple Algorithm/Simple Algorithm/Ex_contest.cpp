@@ -41,7 +41,7 @@ int main() {
 			if (y > 0)
 				n1++;
 			else
-				n4++
+				n4++;
 		}
 		else {
 			if (y > 0)
@@ -51,14 +51,16 @@ int main() {
 		}
 		n++;
 	}
+	int max = n1;
+	int index = 1;
 
 	std::vector<int> name = { n1 , n2, n3, n4 };
 	for (int i = 1; i < 4; i++) {
-		int max = n1;
-		int index = 1;
+
 		if (name[i] > max) {
 			max = name[i];
 			index = i + 1;
+		}
 	}
 	cout << index << ' ' << max;
 
