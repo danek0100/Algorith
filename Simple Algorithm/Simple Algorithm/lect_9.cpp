@@ -32,15 +32,18 @@ uint64_t factorial(uint16_t n) {
 //		return 1;
 //}
 
-//Поиск наибольшего делителя
-int gcd(int a, int b) {
-	return (b == 0) ? a : gcd(b, a % b);
-}
+////Поиск наибольшего делителя
+//int gcd(int a, int b) {
+//	return (b == 0) ? a : gcd(b, a % b);
+//}
+//
+//int main() {
+//	int a, b;
+//	std::cin >> a >> b;
+//	std::cout << gcd(a,b);
+//	
+//	return 0;
+//}
 
-int main() {
-	int a, b;
-	std::cin >> a >> b;
-	std::cout << gcd(a,b);
-	
-	return 0;
-}
+//Хайнойские башни
+
