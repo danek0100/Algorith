@@ -24,38 +24,38 @@ using namespace std;
 //	Формат выходных данных
 //	Через пробел сумма двух минимальных и двух максимальных элементов.
 
-
-int main() {
-	int N;
-	int min1 = 1000001;
-	int min2 = 1000001;
-	int max1 = 0;
-	int max2 = 0;
-
-	cin >> N;
-	int n = 0;
-	while (n < N) {
-		int x;
-		cin >> x;
-		if (x < min1 && x < min2) {
-			min2 = min1;
-			min1 = x;
-		}
-		else if (x >= min1 && x <= min2)
-			min2 = x;
-
-		if (x > max1 && x > max2) {
-			max2 = max1;
-			max1 = x;
-		}
-		else if (x <= max1 && x >= max2)
-			max2 = x;
-
-		n++;
-	}
-	cout << min1 + min2 << ' ' << max1 + max2;
-	return 0;
-}
+//
+//int main() {
+//	int N;
+//	int min1 = 1000001;
+//	int min2 = 1000001;
+//	int max1 = 0;
+//	int max2 = 0;
+//
+//	cin >> N;
+//	int n = 0;
+//	while (n < N) {
+//		int x;
+//		cin >> x;
+//		if (x < min1 && x < min2) {
+//			min2 = min1;
+//			min1 = x;
+//		}
+//		else if (x >= min1 && x <= min2)
+//			min2 = x;
+//
+//		if (x > max1 && x > max2) {
+//			max2 = max1;
+//			max1 = x;
+//		}
+//		else if (x <= max1 && x >= max2)
+//			max2 = x;
+//
+//		n++;
+//	}
+//	cout << min1 + min2 << ' ' << max1 + max2;
+//	return 0;
+//}
 
 //int main() {
 //	int N;
