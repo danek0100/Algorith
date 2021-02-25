@@ -63,3 +63,84 @@ void permunations(int16_t* buffer, int16_t current, int16_t number, bool* used) 
 //Быстрые рекурентные сортировки
 //Тони Хорана и Слиянием
 
+#include <iostream>
+void input_a(double* A, int16_t n) {
+	for (int i = 0; i < n; i++) {
+		std::cin >> A[i];
+	}
+}
+
+void merge_sort(double* A, int16_t n) {
+	if (n <= 1) return;
+	int16_t middle = n / 2;
+	double* left = A;
+	double* right = A + middle;
+
+	//
+	int16_t left_size = middle;
+	int16_t right_size = n - left_size;
+
+	//
+	merge_sort(left, left_size);
+	merge_sort(right, n - right_size);
+	
+	//
+	double* buf = new double[n];
+	int16_t l_i = 0;
+	int16_t r_i = 0;
+	int16_t buf_i = 0;
+	while (l_i < left_size && r_i < right_size) {
+		if (left[l_i] <= right[r_i]) {
+			buf[buf_i] = left[l_i];
+			l_i++;
+			buf_i++;
+		}
+		else {
+			buf[buf_i] = right[r_i];
+			r_i++;
+			buf_i++;
+		}
+	}
+
+	while (l_i < left_size) {
+		buf[buf_i] = left[l_i];
+		l_i += 1;
+		buf_i += 1;
+	}
+
+	while (r_i < right_size) {
+		buf[buf_i] = right[r_i];
+		r_i += 1;
+		buf_i += 1;
+	}
+
+	for (int16_t i = 0; i < n; i++) {
+		A[i] = buf[i];
+	}
+	delete[] buf;
+}
+
+void print_a(double* A, int16_t n) {
+	for (int i = 0; i < n; i++) {
+		std::cout << A[i] << ' ';
+	}
+	std::cout << '\n';
+}
+
+
+const int MAX_ARRAY_SIZE = 10000;
+
+int main() {
+	int16_t n;
+	std::cin >> n;
+	if (n <= 0 || n > MAX_ARRAY_SIZE) {
+		std::cerr << "Array trouble";
+		return 1;
+	}
+	double* A = new double[n];
+
+	input_a(A, n);
+	merge_sort(A, n);
+	print_a(A, n);
+	return 0;
+}
