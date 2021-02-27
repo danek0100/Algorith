@@ -129,18 +129,18 @@ void print_a(double* A, int16_t n) {
 
 
 const int MAX_ARRAY_SIZE = 10000;
-
-int main() {
-	int16_t n;
-	std::cin >> n;
-	if (n <= 0 || n > MAX_ARRAY_SIZE) {
-		std::cerr << "Array trouble";
-		return 1;
-	}
-	double* A = new double[n];
-
-	input_a(A, n);
-	merge_sort(A, n);
-	print_a(A, n);
-	return 0;
-}
+//
+//int main() {
+//	int16_t n;
+//	std::cin >> n;
+//	if (n <= 0 || n > MAX_ARRAY_SIZE) {
+//		std::cerr << "Array trouble";
+//		return 1;
+//	}
+//	double* A = new double[n];
+//
+//	input_a(A, n);
+//	merge_sort(A, n);
+//	print_a(A, n);
+//	return 0;
+//}
