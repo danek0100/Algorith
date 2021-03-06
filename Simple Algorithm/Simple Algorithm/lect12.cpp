@@ -96,3 +96,53 @@ int ant_dynamic_vector(int n, int m) {
 //Жадный алгоритм обычно дают приближённые решения, но не всегда оптимальные
 
 //Дискретная задача
+
+double max_value(std::vector<std::pair<int, double>> treasures, int size) {
+	std::vector<std::vector<int>> F; // 2D array of answers
+	F.resize(size + 1);
+	for (int i = 0; i <= size; i++)
+		F[i].resize(treasures.size() + 1);
+
+	for (int i = 0; i <= size; i++) {
+		F[i][0] = 0;
+	}
+	for (int j = 0; j <= treasures.size(); j++)
+		F[0][j] = 0;
+
+	for (int j = 1; j <= treasures.size(); j++) {
+		int weight = treasures[j - 1].first;
+		double value = treasures[j - 1].second;
+		for (int k = 1; k <= weight; k++) {
+			F[k][j] = F[k][j - 1];
+		}
+		for (int k = weight; k <= size; k++) {
+			F[k][j] = std::max(double(F[k][j-1]), value + F[k - weight][j - 1]);
+		}
+	}
+
+	
+	return F[size][treasures.size()];
+}
+
+
+int main() {
+	int tr_number;
+	//Количество предметов
+	std::cin >> tr_number;
+	std::vector<std::pair<int, double>> treasures;
+	for (int i = 0; i <= tr_number; i++) {
+		int weight;
+		double value;
+		std::cin >> weight >> value;
+		treasures.push_back(std::make_pair(weight, value));
+	}
+	
+	//Размер рюкзака
+	int size;
+	std::cin >> size;
+
+
+	std::cout << max_value(treasures, size) << '\n';
+
+	return 0;
+}
