@@ -21,21 +21,50 @@
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
-int main(){
-	const char* s = "Hello, World! ";
-	printf("%s\n", s);
-	printf("%d\n", strlen(s));
-	int times_to;
-	scanf("%d", &times_to);
-	size_t buffer_length = strlen(s) * times_to + 1;
-	char* buffer = (char*)malloc(buffer_length * sizeof(char));
-	buffer[0] = '\0';
+//через char
+//int main(){
+//	const char* s = "Hello, World! ";
+//	printf("%s\n", s);
+//	printf("%d\n", strlen(s));
+//	int times_to;
+//	scanf("%d", &times_to);
+//	size_t buffer_length = strlen(s) * times_to + 1;
+//	char* buffer = (char*)malloc(buffer_length * sizeof(char));
+//	buffer[0] = '\0';
+//
+//	for (int i = 0; i < times_to; i++) {
+//		strcat(buffer, s);
+//	}
+//	printf("%s\n", buffer);
+//
+//	free(buffer);
+//}
 
-	for (int i = 0; i < times_to; i++) {
-		strcat(buffer, s);
-	}
-	printf("%s\n", buffer);
+//int main()
+//{
+//	//Используеться для ускорения ввода автоматических тестов
+//	std::ios_base::sync_with_stdio(false);
+//	std::cin.tie(nullptr);
+//
+//	std::string hello = "Hello, world! ";
+//	std::string result;
+//
+//	int times_to_concatenate;
+//	std::cin >> times_to_concatenate;
+//
+//	for (int i = 0; i < times_to_concatenate; i++) {
+//		result += hello;
+//	}
+//
+//	std::cout << result << std::endl;
+//	return 0;
+//}
 
-	free(buffer);
-}
+//Растояние Левинштейна
+
+//Растояние Хаффмана 
+//'A B C D
+//B C C D растояние равно 2
