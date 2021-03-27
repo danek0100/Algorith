@@ -68,3 +68,50 @@
 //Растояние Хаффмана 
 //'A B C D
 //B C C D растояние равно 2
+//Растояние в количестве редакционных ошибок
+#include <algorithm>
+#include <vector>
+
+int levenstein_distance(std::string a, std::string b) {
+	std::vector<std::vector<int>> L; // 2D array of answers
+	L.resize(a.length() + 1);
+	for (int i = 0; i <= a.length(); i++)
+		L[i].resize(b.length() + 1);
+
+	for (int i = 0; i <= a.length(); i++) {
+		L[i][0] = i;
+	}
+	for (int k = 0; j <= b.length(); j++)
+		L[0][j] = k;
+
+	for (int i = 1; i <= a.length(); i++) {
+		for (int k = 1; k <= b.length(); k++) {
+			if (a[i - 1] == b[k - 1]) // Last chars are the same!
+				L[i][k] = L[i - 1][k - 1];
+			else
+				L[i][k] = std::min(std::min(L[i - 1][k], L[i][k - 1]), L[i-1][k-1]) + 1;
+		}
+	}
+
+
+	return L[a.length][b.length];
+}
+
+
+//int main() {
+//	std::string a, b;
+//	std::cin >> a;
+//	std::cin >> b;
+//	
+//	std::cout << levenstein_distance(a, b) << '\n';
+//
+//	return 0;
+//}
+
+// Сущетсвет три пути для работы с файлами
+// через дескриптор, указатели, объекты
+
+//Лекция 15
+//Контейнеры и итераторы
+// Массив -> контейнер
+// Указатель -> итератор
