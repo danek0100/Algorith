@@ -81,8 +81,8 @@ int levenstein_distance(std::string a, std::string b) {
 	for (int i = 0; i <= a.length(); i++) {
 		L[i][0] = i;
 	}
-	for (int k = 0; j <= b.length(); j++)
-		L[0][j] = k;
+	for (int k = 0; k <= b.length(); k++)
+		L[0][k] = k;
 
 	for (int i = 1; i <= a.length(); i++) {
 		for (int k = 1; k <= b.length(); k++) {
@@ -113,5 +113,82 @@ int levenstein_distance(std::string a, std::string b) {
 
 //Лекция 15
 //Контейнеры и итераторы
-// Массив -> контейнер
-// Указатель -> итератор
+// Массив, вектор, список -> контейнер
+
+
+// Указатель -> итератор (объект)
+//*p - разъименование
+//++p --p - итерирование
+//p+s - произвольный доступ
+
+// std::vector
+//Динамический массив переменного размера с автоматической реаллокцией
+//и автоматическим освобождением памяти
+
+//Проблемы со вставкой в середину и расширение в начало
+//insert()
+
+// std::list
+//Двусвязаный список
+//Легче вставить в середину. Перемещение с помощью итератора.
+
+#include <list>
+#include <string>
+#include <iostream>
+
+//int main() {
+//	std::list<std::string> words;
+//	std::vector<std::string> words_v;
+//	std::string word;
+//
+//	getline(std::cin, word);
+//	while (word != "") {
+//		words.push_back(word);
+//		words_v.push_back(word);
+//		getline(std::cin, word);
+//	}
+//
+//	for (auto word : words) {
+//		std::cout << word << '\t';
+//	}
+//	std::cout << std::endl;
+//
+//	std::list<std::string>::iterator p;
+//	for (p = words.begin(); p != words.end(); ++i) {
+//		std::cout << *p << '\t';
+//	}
+//	std::cout << std::endl;
+//
+//	for (auto p = words.begin(); p != words.end(); ++i) {
+//		std::cout << *p << '\t';
+//	}
+//	std::cout << std::endl;
+//
+//	for (int i = 0; i < words_v.size(); i++) {
+//		std::cout << words_v[i] << '\t';
+//	}
+//	std::cout << std::endl;
+//
+//	std::vector<std::string>::iterator p_v;
+//	for (p_v = words_v.begin(); p_v != words_v.end(); ++i) {
+//		std::cout << *p_v << '\t';
+//	}
+//	std::cout << std::endl;
+//
+//	return 0;
+//}
+
+// Наивный поиск вхождения шаблона в строку
+// O((N-M+1) * M) == O(N*M) худший случай
+// Полная проверка строки на каждое вхождение шаблона.
+
+// Алгоритм поиска 
+// Через конечный автомат
+
+//Pi - функция строки(префикс функция) КМП - алгоритм
+// Собств. Сфуффикс
+// Pi - функция - максимальная длина собстевнного суфикса совпадающая с префиксом
+// abacabadabacabaaabbabacabacabada b   a 
+// 00101230123456711201234567455789(10)(11)...
+ 
+
