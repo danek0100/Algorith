@@ -192,3 +192,51 @@ int levenstein_distance(std::string a, std::string b) {
 // 00101230123456711201234567455789(10)(11)...
  
 
+#include <string>
+#include <iostream>
+#include <vector>
+
+
+//abacaba#accabacbabacabacabaabac
+//0010123010012340123456745671123
+//Там где 7, значит мы встретили нашу подстроку
+
+std::vector<int> prefix_function_kmp(std::string s) {
+	int n = s.length();
+	std::vector<int> pi(n, 0);
+	for (int i = 1; i < n; ++i) {
+		int k = pi[i - 1];
+		while (k > 0 && s[i] != s[k]) {
+			k = pi[k - 1];
+		}
+		if (s[i] == s[k])
+			k += 1;
+		pi[i] = k;
+	}
+	return pi;
+}
+
+//int main() {
+//	std::string line;
+//	getline(std::cin, line);
+//	std::string tmp;
+//	getline(std::cin, tmp);
+//
+//	std::string summary = tmp + '#' + line;
+//	std::vector<int> pi = prefix_function_kmp(summary);
+//
+//	int counter;
+//	for (auto x : pi) {
+//		if (x == tmp.size())
+//			counter++;
+//	}
+//
+//	std::cout << counter << std::endl;
+//}	
+
+
+//Z - функция строки и z - алгоритм
+// zi = max
+
+// Суть поиска, как у Pi функции, но сразу нужна вся строка для проверки, а вот pi функцию можно вычислять динамически
+
