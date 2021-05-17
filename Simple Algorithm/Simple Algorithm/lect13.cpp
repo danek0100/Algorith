@@ -279,3 +279,58 @@ std::vector<int> prefix_function_kmp(std::string s) {
 //		factor *= P;
 //	}
 //}
+
+//Хэш-таблицы в с++ undored_map
+//Красно-чёрные деревья двоичного поиска map
+//set - множество, где важен только ключ и не важно значение
+
+// Базы данных
+//mysql mariaysql и дуругие (примера не будет, нужно ставить отдельно и учиться)
+
+// Графовые алгоритмы
+// Проверка смежности, задача Эллера, перебор смежных вершин
+// Представения графов: матрица смежности (двумерный массив), 
+
+// Модульность
+// Этапы компиляции
+// Макросы
+// Сборка из нескольких файлов
+// Cmake
+
+//Способы хранения графов 
+
+#include <set>
+
+typedef int32_t vertex_t;
+typedef std::set<vertex_t> SetOfVertexes;
+
+class Graph {
+public:
+	int vertexes_number = 0;
+	int edges_number = 0;
+	std::set < std::pair<vertex_t, vertex_t> > set_of_edges;
+
+	
+
+	void input() {
+		std::cin >> vertexes_number;
+		std::cin >> edges_number;
+		set_of_edges.clear();
+
+		for (vertex_t i = 0; i < vertexes_number; i++) {
+			vertex_t a, b;
+			std::cin >> a >> b;
+			set_of_edges.insert(std::make_pair(a, b));
+		}
+	}
+
+	void print() const {
+		std::cout << vertexes_number << std::endl;
+		for (auto edge : set_of_edges) {
+			std::cout << "(" << edge.first << ", " << edge.second << ") ";
+		}
+		std::cout << std::endl;
+	}
+
+};
+typedef std::set<std::pair<vertex_t, vertex_t>> SetOfEdges;
