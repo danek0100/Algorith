@@ -334,3 +334,6 @@ public:
 
 };
 typedef std::set<std::pair<vertex_t, vertex_t>> SetOfEdges;
+
+// Поиск кратчайшего пути во взвешенном графе
+// Алгоритм Дейкстера
