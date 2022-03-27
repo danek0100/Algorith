@@ -1,3 +1,3 @@
-# Algorithm on YouTube by Timofey Hiryanov
+# Algorithm notes
 
 Notes from the course on algorithms on YouTube by Timofey Hiryanov
